@@ -1,31 +1,38 @@
+using Awesome.BusinessService.Interfaces;
+using Awesome.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Awesome.API.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
+    [Route("api/v1/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
+        private readonly IOpenWeatherMapService _openWeatherMapService;
         private static readonly string[] Summaries = new[]
         {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+        };
 
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(IOpenWeatherMapService openWeatherMapService)
         {
-            _logger = logger;
+            _openWeatherMapService = openWeatherMapService;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet("city/{cityName}")]
+        public async Task<WeatherResponseDto> GetWeatherByCity(string cityName)
+        {
+            return await _openWeatherMapService.GetWeatherByCityNameAsync(cityName);
+        }
+
+        [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+                TemperatureC = rng.Next(-20, 55),
+                Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
         }

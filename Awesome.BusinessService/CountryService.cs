@@ -25,5 +25,11 @@ namespace Awesome.BusinessService
             var countries = await _dataContext.Countries.ToListAsync();
             return _mapper.Map<IEnumerable<CountryDto>>(countries);
         }
+
+        public async Task<CountryDto> GetCountryByCode(string code)
+        {
+            var country = await _dataContext.Countries.FirstOrDefaultAsync(c => c.Code == code);
+            return _mapper.Map<CountryDto>(country);
+        }
     }
 }

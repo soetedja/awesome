@@ -7,5 +7,6 @@ namespace Awesome.BusinessService.Interfaces
     public interface ICountryService
     {
         Task<IEnumerable<CountryDto>> GetCountries();
+        Task<CountryDto> GetCountryByCode(string code);
     }
 }
