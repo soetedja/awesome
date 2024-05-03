@@ -8,7 +8,7 @@ namespace Awesome.UnitTest.Infrastructures
 {
     public class ServiceProviderTestHelper
     {
-        public ServiceProvider CreateServiceProvider(DataContext dataContext, MockHelper mockHelper)
+        public static ServiceProvider CreateServiceProvider(DataContext dataContext, MockHelper mockHelper)
         {
             var serviceCollection = new ServiceCollection();
 
@@ -18,12 +18,15 @@ namespace Awesome.UnitTest.Infrastructures
             {
                 {"OpenWeatherMapApiKey", "my-key"}
             });
+
             var configuration = configBuilder.Build();
 
             serviceCollection.AddSingleton<IConfiguration>(configuration);
 
-            // Unit Test DI Injenction
+            // Register App DI
             DependencyRegister.RegisterInternalServiceDependencies(serviceCollection);
+
+            // Register Unit Test DI Injenction (for External Service Call only)
             RegisterMockedExternalServiceDependencies(serviceCollection, mockHelper);
 
             serviceCollection.AddDbContext<DataContext>((serviceProvider, optionsBuilder) =>
@@ -36,7 +39,7 @@ namespace Awesome.UnitTest.Infrastructures
             return serviceCollection.BuildServiceProvider();
         }
 
-        public void RegisterMockedExternalServiceDependencies(IServiceCollection serviceCollection, MockHelper mockHelper)
+        public static void RegisterMockedExternalServiceDependencies(IServiceCollection serviceCollection, MockHelper mockHelper)
         {
             serviceCollection.AddScoped(sp => mockHelper.HttpClientService().Object);
         }

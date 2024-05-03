@@ -1,7 +1,6 @@
 ﻿using Awesome.Api.Controllers;
 using Awesome.BusinessService.Interfaces;
 using Awesome.Domain;
-using Awesome.Repository;
 using Awesome.UnitTest.Infrastructures;
 using Awesome.UnitTest.Infrastructures.Db;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,7 +23,7 @@ namespace Awesome.UnitTest.Api
             var dataContext = Fixture.CreateContext();
             _dataContextTestHelper = new DataContextTestHelper(dataContext);
 
-            _serviceProvider = new ServiceProviderTestHelper().CreateServiceProvider(dataContext, _mockHelper);
+            _serviceProvider = ServiceProviderTestHelper.CreateServiceProvider(dataContext, _mockHelper);
             var countryService = _serviceProvider.GetService<ICountryService>()!;
             var cityService = _serviceProvider.GetService<ICityService>()!;
 

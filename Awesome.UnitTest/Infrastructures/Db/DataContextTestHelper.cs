@@ -1,9 +1,4 @@
 ﻿using Awesome.Repository;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Awesome.UnitTest.Infrastructures.Db
 {
@@ -21,7 +16,8 @@ namespace Awesome.UnitTest.Infrastructures.Db
             _dataContext.Add(obj);
             _dataContext.SaveChanges();
         }
-        public T Retrieve<T>(int id) where T : class
+
+        public T? Retrieve<T>(int id) where T : class
         {
             return _dataContext.Set<T>().Find(id);
         }

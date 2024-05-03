@@ -25,7 +25,7 @@ namespace Awesome.UnitTest.BusinessService
         {
             Fixture = fixture;
             var fixtureDataContext = Fixture.CreateContext();
-            _serviceProvider = new ServiceProviderTestHelper().CreateServiceProvider(fixtureDataContext, _mockHelper);
+            _serviceProvider = ServiceProviderTestHelper.CreateServiceProvider(fixtureDataContext, _mockHelper);
             
             var configuration = _serviceProvider.GetService<IConfiguration>()!;
             var httpClientService = _serviceProvider.GetService<IHttpClientService>()!;

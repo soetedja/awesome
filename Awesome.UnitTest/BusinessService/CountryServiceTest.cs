@@ -22,7 +22,7 @@ namespace Awesome.UnitTest.BusinessService
             Fixture = fixture;
             var fixtureDataContext = Fixture.CreateContext();
             _dataContextTestHelper = new DataContextTestHelper(fixtureDataContext);
-            _serviceProvider = new ServiceProviderTestHelper().CreateServiceProvider(fixtureDataContext, _mockHelper);
+            _serviceProvider = ServiceProviderTestHelper.CreateServiceProvider(fixtureDataContext, _mockHelper);
             var dataContext = _serviceProvider.GetService<IDataContext>()!;
             var mapper = _serviceProvider.GetService<IMapper>()!;
 

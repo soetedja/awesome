@@ -1,7 +1,6 @@
 ﻿using Awesome.API.Controllers;
 using Awesome.BusinessService.Interfaces;
 using Awesome.Model.OpenWeather;
-using Awesome.Repository;
 using Awesome.UnitTest.Infrastructures;
 using Awesome.UnitTest.Infrastructures.Db;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,7 +21,7 @@ namespace Awesome.UnitTest.Api
         {
             Fixture = fixture;
             var dataContext = Fixture.CreateContext();
-            var serviceProvider = new ServiceProviderTestHelper().CreateServiceProvider(dataContext, _mockHelper);
+            var serviceProvider = ServiceProviderTestHelper.CreateServiceProvider(dataContext, _mockHelper);
 
             var openWeatherMapService = serviceProvider.GetService<IOpenWeatherMapService>()!;
 
