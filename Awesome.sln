@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Awesome.Repository", "Aweso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Awesome.BusinessService", "Awesome.BusinessService\Awesome.BusinessService.csproj", "{C7187FEA-0FDE-4289-855A-F39A534916FA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Awesome.Test", "Awesome.UnitTest\Awesome.Test.csproj", "{8E1CDB91-FED3-4CA6-97AE-88822B810E6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Awesome.Test", "Awesome.Test\Awesome.Test.csproj", "{8E1CDB91-FED3-4CA6-97AE-88822B810E6E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Awesome.Common", "Awesome.Common\Awesome.Common.csproj", "{37EE57FB-B222-4318-8ED2-353D5F44C5FB}"
 EndProject
