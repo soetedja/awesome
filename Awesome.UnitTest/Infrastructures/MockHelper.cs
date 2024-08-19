@@ -1,7 +1,7 @@
 ﻿using Awesome.BusinessService.Utilities;
 using Moq;
 
-namespace Awesome.UnitTest.Infrastructures
+namespace Awesome.Test.Infrastructures
 {
     public class MockHelper
     {

@@ -1,6 +1,6 @@
 ﻿using Awesome.Repository;
 
-namespace Awesome.UnitTest.Infrastructures.Db
+namespace Awesome.Test.Infrastructures.Db
 {
     public class DataContextTestHelper
     {

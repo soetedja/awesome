@@ -3,14 +3,14 @@ using Awesome.BusinessService;
 using Awesome.BusinessService.Interfaces;
 using Awesome.BusinessService.Utilities;
 using Awesome.Model.OpenWeather;
-using Awesome.UnitTest.Infrastructures;
-using Awesome.UnitTest.Infrastructures.Db;
+using Awesome.Test.Infrastructures;
+using Awesome.Test.Infrastructures.Db;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using Newtonsoft.Json;
 
-namespace Awesome.UnitTest.BusinessService
+namespace Awesome.Test.BusinessService
 {
     [Collection("TransactionalTests")]
     public class OpenWeatherMapServiceTest : IDisposable

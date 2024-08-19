@@ -1,11 +1,11 @@
 ﻿using Awesome.Api.Controllers;
 using Awesome.BusinessService.Interfaces;
 using Awesome.Domain;
-using Awesome.UnitTest.Infrastructures;
-using Awesome.UnitTest.Infrastructures.Db;
+using Awesome.Test.Infrastructures;
+using Awesome.Test.Infrastructures.Db;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Awesome.UnitTest.Api
+namespace Awesome.Test.Api
 {
     [Collection("TransactionalTests")]
     public class LocationControllerTest : IDisposable

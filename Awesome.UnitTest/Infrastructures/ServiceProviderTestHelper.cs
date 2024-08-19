@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Awesome.UnitTest.Infrastructures
+namespace Awesome.Test.Infrastructures
 {
     public class ServiceProviderTestHelper
     {

@@ -2,11 +2,11 @@
 using Awesome.BusinessService;
 using Awesome.Domain;
 using Awesome.Repository;
-using Awesome.UnitTest.Infrastructures;
-using Awesome.UnitTest.Infrastructures.Db;
+using Awesome.Test.Infrastructures;
+using Awesome.Test.Infrastructures.Db;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Awesome.UnitTest.BusinessService
+namespace Awesome.Test.BusinessService
 {
     [Collection("TransactionalTests")]
     public class CountryServiceTest : IDisposable

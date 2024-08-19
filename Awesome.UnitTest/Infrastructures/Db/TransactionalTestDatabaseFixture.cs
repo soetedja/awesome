@@ -2,7 +2,7 @@
 using Awesome.Repository;
 using Microsoft.EntityFrameworkCore;
 
-namespace Awesome.UnitTest.Infrastructures.Db
+namespace Awesome.Test.Infrastructures.Db
 {
     public class TransactionalTestDatabaseFixture
     {

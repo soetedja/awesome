@@ -1,6 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 
-namespace Awesome.UnitTest.Infrastructures.Db
+namespace Awesome.Test.Infrastructures.Db
 {
     public class SQLDBConnections
     {

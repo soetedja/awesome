@@ -1,4 +1,4 @@
-﻿namespace Awesome.UnitTest.Infrastructures.Db
+﻿namespace Awesome.Test.Infrastructures.Db
 {
     [CollectionDefinition("TransactionalTests")]
     public class TransactionalTestsCollection : ICollectionFixture<TransactionalTestDatabaseFixture>

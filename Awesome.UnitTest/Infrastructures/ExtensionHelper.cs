@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Awesome.UnitTest.Infrastructures
+namespace Awesome.Test.Infrastructures
 {
     public static class ExtensionHelper
     {

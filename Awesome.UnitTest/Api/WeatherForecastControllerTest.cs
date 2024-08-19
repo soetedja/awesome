@@ -1,13 +1,13 @@
 ﻿using Awesome.API.Controllers;
 using Awesome.BusinessService.Interfaces;
 using Awesome.Model.OpenWeather;
-using Awesome.UnitTest.Infrastructures;
-using Awesome.UnitTest.Infrastructures.Db;
+using Awesome.Test.Infrastructures;
+using Awesome.Test.Infrastructures.Db;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using Newtonsoft.Json;
 
-namespace Awesome.UnitTest.Api
+namespace Awesome.Test.Api
 {
     [Collection("TransactionalTests")]
     public class WeatherForecastControllerTest : IDisposable
